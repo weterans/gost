@@ -1,0 +1,98 @@
+\ProvidesPackage{gost-7-32-headings}[2022/01/28 GOST 7.32-2017]
+
+\RequirePackage{titlesec}
+\RequirePackage{titling}
+\RequirePackage{setspace}
+
+\RequirePackage{gost-7-32-counters}
+
+%
+% Set custom formatting to well-known LaTeX commands: section, subsection and subsubsection
+%
+\titleformat{\section}[runin]{\large \bfseries}{\thesection}{0.5em}{}[\newline \indent]
+\titlespacing{\section}{1.25cm}{1em}{0cm}
+
+\titleformat{\subsection}[runin]{\normalsize \bfseries}{\thesubsection}{0.5em}{}[\newline \indent]
+\titlespacing{\subsection}{1.25cm}{1em}{0cm}
+
+\titleformat{\subsubsection}{\normalsize \bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing{\subsubsection}{1.25cm}{1em}{0cm}
+
+%
+% Make special headings, that have their own formatting rules:
+% - centered
+% - all-caps
+% - bold
+%
+% Only three of them must appear in TOC: introduction, conclusion and references
+%
+\newcommand{\introduction}{
+    \addcontentsline{toc}{section}{ВВЕДЕНИЕ}
+    \begin{center}
+        \bfseries\large
+        ВВЕДЕНИЕ
+    \end{center}
+}
+
+\newcommand{\conclusion}{
+    \addcontentsline{toc}{section}{ЗАКЛЮЧЕНИЕ}
+    \begin{center}
+        \bfseries\large
+        ЗАКЛЮЧЕНИЕ
+    \end{center}
+}
+
+\newcommand{\references}{
+    \addcontentsline{toc}{section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+    \begin{center}
+        \bfseries\large
+        СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ
+    \end{center}
+}
+
+\newcommand{\essay}{
+    \begin{center}
+        \bfseries\large
+        РЕФЕРАТ
+    \end{center}
+}
+
+\newcommand{\definitions}{
+    \begin{center}
+        \bfseries\large
+        ОПРЕДЕЛЕНИЯ
+    \end{center}
+}
+
+\newcommand{\abbreviations}{
+    \begin{center}
+        \bfseries\large
+        ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ
+    \end{center}
+}
+
+\newcommand{\defsabbrs}{
+    \begin{center}
+        \bfseries\large
+        ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ
+    \end{center}
+}
+
+%
+% Appendices headings. Appendices have autoincrementing number, 
+% that is represented with russian letter.
+% This heading must appear in TOC
+%
+\newcounter{appendixcnt}
+\setcounter{appendixcnt}{1}
+
+\newcommand{\xappendix}[1]{
+    \addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ \AlphRus{appendixcnt}. #1}
+    \begin{center}
+        \bfseries\large
+        ПРИЛОЖЕНИЕ \AlphRus{appendixcnt}
+        
+        #1
+    \end{center}
+    \stepcounter{appendixcnt}
+}

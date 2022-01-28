@@ -1,0 +1,37 @@
+\ProvidesPackage{gost-7-32-counters}[2022/01/29 GOST 7.32-2017]
+
+%
+% Values for capital russian letters counter
+%
+\makeatletter
+\newcommand\AlphRus[1]{%
+  \expandafter \@AlphRus \csname c@#1\endcsname
+}
+
+\newcommand\@AlphRus[1]{%
+  \ifcase #1%
+  \or А\or Б\or В\or Г\or Д\or Е\or Ж\or И\or К\or 
+    Л\or М\or Н\or П\or Р\or С\or Т\or У\or Ф\or 
+    Х\or Ц\or Ш\or Щ\or Э\or Ю\or Я%
+  \else \@ctrerr
+\fi
+}
+\makeatother
+
+%
+% Values for lowercase russian letters counter
+%
+\makeatletter
+\newcommand\alphRus[1]{%
+  \expandafter \@alphRus \csname c@#1\endcsname
+}
+
+\newcommand\@alphRus[1]{%
+  \ifcase #1%
+  \or а\or б\or в\or г\or д\or е\or ж\or и\or к\or 
+    л\or м\or н\or п\or р\or с\or т\or у\or ф\or 
+    х\or ц\or ш\or щ\or э\or ю\or я%
+  \else \@ctrerr
+\fi
+}
+\makeatother

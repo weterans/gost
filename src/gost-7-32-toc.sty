@@ -1,0 +1,21 @@
+\ProvidesPackage{gost-7-32-toc}[2022/01/28 GOST 7.32-2017]
+
+\RequirePackage{tocloft}
+
+%
+% Set custom font styles
+%
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecpagefont}{\normalsize}
+\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\large\bfseries\MakeUppercase}
+
+%
+% Set indents and line spacing
+%
+\setlength{\cftbeforesecskip}{0cm}
+\setlength{\cftbeforesubsecskip}{0cm}
+\setlength{\cftbeforesubsubsecskip}{0cm}
+\setlength{\cftbeforeparaskip}{0cm}
