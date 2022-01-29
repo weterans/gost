@@ -1,4 +1,4 @@
-# GOST
+# GOST 7.32-2017 (ГОСТ 7.32-2017)
 
 You can find GOST [here][1].
 
