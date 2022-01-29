@@ -1,0 +1,54 @@
+\ProvidesPackage{gost-7-32-bibliography}[2022/01/28 GOST 7.32-2017]
+
+\newdimen\bibindent
+\renewenvironment{thebibliography}[1]{
+ \chapter*{\bibname}\addcontentsline{toc}{chapter}{\bibname}%
+ \list{\@biblabel{\@arabic\c@enumiv}}%
+      {\settowidth\labelwidth{\@biblabel{#1}}%
+       \leftmargin\labelwidth
+       \advance\leftmargin\labelsep
+       \@openbib@code
+       \usecounter{enumiv}%
+       \let\p@enumiv\@empty
+       \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+ \sloppy\clubpenalty4000\widowpenalty4000%
+ \sfcode`\.\@m
+}{
+ \setcounter{totalbib}{\c@enumiv}%
+ \def\@noitemerr
+ {\@latex@warning{Empty `thebibliography' environment}}%
+ \endlist
+}
+\renewcommand\@biblabel{}%
+\setlength\bibindent{1.5em}
+
+% Точки после номеров в библиографии. Несовместимо с natbib! -- Коротков И.
+%\makeatletter
+\renewcommand*{\@biblabel}[1]{\hfill#1.}
+
+
+%
+% Remove References header completely
+% Stolen from original article.cls
+%
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+%     \section*{\refname}%
+%      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother

@@ -43,3 +43,4 @@
 \RequirePackage{gost-7-32-headings}
 \RequirePackage{gost-7-32-toc}
 \RequirePackage{gost-7-32-lists}
+\RequirePackage{gost-7-32-bibliography}
