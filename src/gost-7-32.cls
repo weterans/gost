@@ -2,9 +2,16 @@
 \ProvidesPackage{gost-7-32}[2022/01/28 GOST 7.32-2017]
 
 %
-% 14pt font size with A4 paper format
+% Supported font sizes: 12pt, 14pt
 %
-\LoadClass[14pt, a4paper]{extarticle}
+\DeclareOption{12pt}{\PassOptionsToClass{\CurrentOption}{extarticle}}
+\DeclareOption{14pt}{\PassOptionsToClass{\CurrentOption}{extarticle}}
+\ProcessOptions\relax
+
+%
+% Set A4 paper format
+%
+\LoadClass[a4paper]{extarticle}
 
 %
 % Times New Roman font
