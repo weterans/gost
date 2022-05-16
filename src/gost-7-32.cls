@@ -36,12 +36,10 @@
     bottom=2cm
 ]{geometry}
 
-
 %
 % Use TMU-like font
 %
 \RequirePackage{tempora}
-
 
 %
 % Use russian language
