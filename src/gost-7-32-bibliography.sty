@@ -1,5 +1,8 @@
 \ProvidesPackage{gost-7-32-bibliography}[2022/01/28 GOST 7.32-2017]
 
+\def\UrlBreaks{\do\/\do-}
+\RequirePackage{url}
+
 \newdimen\bibindent
 \renewenvironment{thebibliography}[1]{
  \chapter*{\bibname}\addcontentsline{toc}{chapter}{\bibname}%
