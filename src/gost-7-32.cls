@@ -37,7 +37,7 @@
 ]{geometry}
 
 %
-% Use TMU-like font
+% Use TMR-like font
 %
 \RequirePackage{tempora}
 
