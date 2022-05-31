@@ -55,3 +55,5 @@
 \RequirePackage{gost-7-32-toc}
 \RequirePackage{gost-7-32-lists}
 \RequirePackage{gost-7-32-bibliography}
+\RequirePackage{gost-7-32-captions}
+\RequirePackage{gost-7-32-tables}
