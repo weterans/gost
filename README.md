@@ -2,6 +2,18 @@
 
 You can find GOST [here][1].
 
+# Features
+
+This `documentclass` is extremely easy to use.
+Almost no configuration is needed.
+All the default LaTeX commands stay the same but they have GOST style now.
+
+- [x] Use default LaTeX commands
+- [x] Add GOST section headers with automatic proper ToC formatting
+- [x] Add GOST-style bibliography in 3 lines of code
+- [ ] Automatic pages, figures and tables count for РЕФЕРАТ section
+- [ ] Title page (you may use [this][2] for now)
+
 # Installation
 
 1. Clone or download this repository.
@@ -101,3 +113,4 @@ Multiple `pdflatex` commands are needed to compile bibliography and table of con
 <!-- References -->
 
 [1]: https://docs.cntd.ru/document/1200157208
+[2]: https://github.com/weterans/mephi-title
