@@ -11,3 +11,19 @@
 % Right-aligned column with automatic width
 %
 \newcolumntype{Z}{>{\raggedleft\arraybackslash}X}
+
+%
+% Table with designations
+%
+\newenvironment{designations}{
+    \noindent
+    \tabularx{\textwidth}{@{}
+        >{\raggedright \arraybackslash \hsize=0.25\hsize}X
+        >{\centering \arraybackslash \hsize=0.05\hsize}X
+        >{\arraybackslash \hsize=0.70\hsize}X
+    }
+}{
+    \endtabularx
+}
+
+\newcommand{\designation}[2]{#1 &---& #2. \\}
