@@ -670,7 +670,7 @@ FUNCTION {bbl.medium.elres}
 { curlanguage "english" =
    { "Electronic resource" }
    { curlanguage "russian" =
-      { "{Электронный ресурс}" }
+      { "{[Электронный ресурс]}" }
       { curlanguage "ukrainian" =
         { "{Електронний ресурс}" }
         { "language is not defined: " language "medium" * * warning$ "Electronic resource" }
@@ -1215,7 +1215,7 @@ FUNCTION {format.url}
 { url empty$
     { "" }
     {
-      "URL: \BibUrl{" url * "}" *
+      "Режим доступа: \BibUrl{" url * "}" *
       urldate empty$
         { "" }
         { " (" bbl.urldate * ": " * urldate * ")" * }
@@ -1548,6 +1548,7 @@ FUNCTION {online}
   howpublished new.dblslash.checka
   howpublished enclose.square.brackets output
   editor.organization.after
+  bbl.medium.elres swap$ " " * write$
   new.sentence
   new.block
   output.address.publisher
