@@ -98,7 +98,6 @@ clear:
 ```
 
 Modify to better suit your needs.
-Multiple `pdflatex` commands are needed to compile bibliography and table of contents.
 
 <!-- References -->
 
