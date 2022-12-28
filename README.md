@@ -91,20 +91,10 @@ We recommend starting with the following Makefile:
 
 ```make
 all:
-	pdflatex main.tex
-	bibtex main
-	pdflatex main.tex
-	pdflatex main.tex
+	latexmk -g -output-directory=build -pdf main.tex
 
 clear:
-	rm main.aux
-	rm main.bbl
-	rm main.blg
-	rm main.out
-	rm main.log
-	rm main.pdf
-	rm main.toc
-	rm sections/*.aux
+	rm -rf build
 ```
 
 Modify to better suit your needs.
