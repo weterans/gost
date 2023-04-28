@@ -3,6 +3,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{titling}
 \RequirePackage{setspace}
+\RequirePackage{chngcntr}
 
 \RequirePackage{gost-7-32-counters}
 
@@ -84,15 +85,25 @@
 % This heading must appear in TOC
 %
 \newcounter{appendixcnt}
-\setcounter{appendixcnt}{1}
+\renewcommand{\theappendixcnt}{\AlphRus{appendixcnt}}
+\setcounter{appendixcnt}{0}
 
 \renewcommand{\appendix}[1]{
-    \addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ \AlphRus{appendixcnt}. #1}
+    % Join tables and figures counters with appendices counter 
+    % strictly before incrementing it
+    % It is necessary to reset these counters after incrementing
+    % appendices counter and prevent numbering shifting
+    \counterwithin{table}{appendixcnt}
+    \counterwithin{figure}{appendixcnt}
+    
+    % Now I can increment appendices counter and use it
+    \stepcounter{appendixcnt}
+    
+    \addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ \theappendixcnt. #1}
     \begin{center}
         \bfseries\large
-        ПРИЛОЖЕНИЕ \AlphRus{appendixcnt}
+        ПРИЛОЖЕНИЕ \theappendixcnt
         
         #1
     \end{center}
-    \stepcounter{appendixcnt}
 }
