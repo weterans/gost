@@ -57,3 +57,4 @@
 \RequirePackage{gost-7-32-bibliography}
 \RequirePackage{gost-7-32-captions}
 \RequirePackage{gost-7-32-tables}
+\RequirePackage{gost-7-32-commands}
