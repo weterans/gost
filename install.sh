@@ -33,8 +33,8 @@ echo "#" >> $PROFILE_FILE
 
 echo "[i] Setting environment variables" >&1
 
-echo "export TEXINPUTS=$SRC_DIR:$TEXINPUTS" >> $PROFILE_FILE
-echo "export BSTINPUTS=$BIBLATEX_DIR:$BSTINPUTS" >> $PROFILE_FILE
+echo "export TEXINPUTS=$SRC_DIR:\$TEXINPUTS" >> $PROFILE_FILE
+echo "export BSTINPUTS=$BIBLATEX_DIR:\$BSTINPUTS" >> $PROFILE_FILE
 
 echo "[+] Environment variables done" >&1
 
@@ -43,7 +43,7 @@ echo "[+] Environment variables done" >&1
 #
 
 echo "#" >> $PROFILE_FILE
-echo "# End GOST LaTex section" >> $PROFILE_FILE
+echo "# End GOST LaTeX section" >> $PROFILE_FILE
 echo "" >> $PROFILE_FILE
 
 echo "[+] Installation completed. Please source your profile file or restart terminal" >&1
