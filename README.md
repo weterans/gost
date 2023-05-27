@@ -25,6 +25,8 @@ export TEXINPUTS=/path/to/repository/GOST/src/:
 export BSTINPUTS=/path/to/repository/GOST/src/biblatex/:
 ```
 
+Or just run `install.sh`.
+
 # Usage
 
 ## Enable the template
