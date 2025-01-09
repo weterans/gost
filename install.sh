@@ -6,8 +6,8 @@ if [[ $# -ne 1 ]]; then
 fi
 
 CURRENT_DIR=$(dirname -- "$(readlink -f -- "$0";)";)
-SRC_DIR=$CURRENT_DIR/src
-BIBLATEX_DIR=$SRC_DIR/biblatex
+SRC_DIR=$CURRENT_DIR/src/gost-7-32/tex/latex
+BIBLATEX_DIR=$SRC_DIR/gost-7-32/bibtex/bst
 PROFILE_FILE=$1
 
 if [ ! -f $PROFILE_FILE ]; then

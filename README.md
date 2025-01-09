@@ -21,8 +21,8 @@ All the default LaTeX commands stay the same but they have GOST style now.
 2. Add following lines to your `.zshrc`/`.bashrc`
 
 ```bash
-export TEXINPUTS=/path/to/repository/GOST/src/:
-export BSTINPUTS=/path/to/repository/GOST/src/biblatex/:
+export TEXINPUTS=/path/to/repository/GOST/src/gost-7-32/tex/latex:
+export BSTINPUTS=/path/to/repository/GOST/src/gost-7-32/bibtex/bst:
 ```
 
 Or just run `install.sh`.
