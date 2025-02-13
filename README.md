@@ -16,16 +16,34 @@ All the default LaTeX commands stay the same but they have GOST style now.
 
 # Installation
 
+For all operating systems first clone this repository.
+
+## Linux/macOS
+
+### Automatic
+
+Run `install.sh` and specify your profile file depending on the shell you use. For example, for `bash`:
+
+```sh
+./install.sh ~/.bashrc
+```
+
+### Manual
+
 1. Clone or download this repository.
 
 2. Add following lines to your `.zshrc`/`.bashrc`
 
-```bash
-export TEXINPUTS=/path/to/repository/GOST/src/:
-export BSTINPUTS=/path/to/repository/GOST/src/biblatex/:
+```sh
+export TEXINPUTS=/path/to/repository/GOST/src/gost-7-32/tex/latex:
+export BSTINPUTS=/path/to/repository/GOST/src/gost-7-32/bibtex/bst:
 ```
 
-Or just run `install.sh`.
+## Windows
+
+### MiKTeX
+
+Go to `MiKTeX Console > Settings > Directories` and add the directory `src/gost-7-32` from this repository.
 
 # Usage
 
@@ -35,8 +53,8 @@ Or just run `install.sh`.
 \documentclass[12pt]{gost-7-32}
 ```
 
-Fontsize parameter is optional.
-Default is 12pt.
+Font size parameter is optional.
+Default is `12pt`.
 You may choose between `12pt` and `14pt`.
 
 ## Supported custom GOST section headings
@@ -85,7 +103,7 @@ Bibliography file entry examples:
 }
 ```
 
-**Important!** You MUST add `language = {russian}` to each entry.
+**Important!** You MUST add `language = {russian}` to each entry otherwise you will get encoding errors in `.bbl` file.
 
 ## Compilation
 

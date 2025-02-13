@@ -18,7 +18,7 @@
 % Use 1.5 line spacing
 %
 \RequirePackage{setspace}
-\spacing{1.5}
+\linespread{1.5}
 
 %
 % First paragraph indentation
