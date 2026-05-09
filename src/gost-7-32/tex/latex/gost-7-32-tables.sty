@@ -1,6 +1,7 @@
 \ProvidesPackage{gost-7-32-tables}[2022/01/28 GOST 7.32-2017]
 
-\RequirePackage{tabularx}
+\RequirePackage{environ}
+\RequirePackage{xltabular}
 
 %
 % Center-aligned column with automatic width
@@ -15,15 +16,14 @@
 %
 % Table with designations
 %
-\newenvironment{designations}{
-    \noindent
-    \tabularx{\textwidth}{@{}
-        >{\raggedright \arraybackslash \hsize=0.25\hsize}X
-        >{\centering \arraybackslash \hsize=0.05\hsize}X
-        >{\arraybackslash \hsize=0.70\hsize}X
-    }
-}{
-    \endtabularx
+\NewEnviron{designations}{%
+  \begin{xltabular}{\textwidth}{@{}
+    >{\raggedright\arraybackslash\hsize=0.25\hsize}X
+    >{\centering\arraybackslash\hsize=0.05\hsize}X
+    >{\arraybackslash\hsize=0.70\hsize}X
+  }
+  \BODY
+  \end{xltabular}
 }
 
 \newcommand{\designation}[2]{#1 &---& #2. \\}
