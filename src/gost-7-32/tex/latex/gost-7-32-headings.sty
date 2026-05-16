@@ -27,57 +27,33 @@
 %
 % Only three of them must appear in TOC: introduction, conclusion and references
 %
-\newcommand{\introduction}{
-    \addcontentsline{toc}{section}{ВВЕДЕНИЕ}
+
+\makeatletter
+\newcommand{\csection}{\@ifstar{\csection@star}{\csection@nostar}}
+
+\newcommand{\csection@star}[1]{
+    \addcontentsline{toc}{section}{#1}
     \begin{center}
-        \bfseries\large
-        ВВЕДЕНИЕ
+	\bfseries\large
+	#1
     \end{center}
 }
 
-\newcommand{\conclusion}{
-    \addcontentsline{toc}{section}{ЗАКЛЮЧЕНИЕ}
+\newcommand{\csection@nostar}[1]{
     \begin{center}
-        \bfseries\large
-        ЗАКЛЮЧЕНИЕ
+	\bfseries\large
+	#1
     \end{center}
 }
+\makeatother
 
-\newcommand{\references}{
-    \addcontentsline{toc}{section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
-    \begin{center}
-        \bfseries\large
-        СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ
-    \end{center}
-}
-
-\newcommand{\essay}{
-    \begin{center}
-        \bfseries\large
-        РЕФЕРАТ
-    \end{center}
-}
-
-\newcommand{\definitions}{
-    \begin{center}
-        \bfseries\large
-        ОПРЕДЕЛЕНИЯ
-    \end{center}
-}
-
-\newcommand{\abbreviations}{
-    \begin{center}
-        \bfseries\large
-        ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ
-    \end{center}
-}
-
-\newcommand{\defsabbrs}{
-    \begin{center}
-        \bfseries\large
-        ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ
-    \end{center}
-}
+\newcommand{\introduction}{\csection{ВВЕДЕНИЕ}}
+\newcommand{\conclusion}{\csection{ЗАКЛЮЧЕНИЕ}}
+\newcommand{\references}{\csection{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
+\newcommand{\essay}{\csection*{РЕФЕРАТ}}
+\newcommand{\definitions}{\csection*{ОПРЕДЕЛЕНИЯ}}
+\newcommand{\abbreviations}{\csection*{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}}
+\newcommand{\defsabbrs}{\csection*{ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}}
 
 %
 % Appendices headings. Appendices have autoincrementing number, 
