@@ -31,7 +31,7 @@
 \makeatletter
 \newcommand{\csection}{\@ifstar{\csection@star}{\csection@nostar}}
 
-\newcommand{\csection@star}[1]{
+\newcommand{\csection@nostar}[1]{
     \addcontentsline{toc}{section}{#1}
     \begin{center}
 	\bfseries\large
@@ -39,7 +39,7 @@
     \end{center}
 }
 
-\newcommand{\csection@nostar}[1]{
+\newcommand{\csection@star}[1]{
     \begin{center}
 	\bfseries\large
 	#1
